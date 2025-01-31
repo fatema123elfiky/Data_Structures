@@ -3,7 +3,7 @@
 //
 
 #include "Singly_Linked_List.h"
-
+#include <cassert>
 
 template<class T>
 void Singly_Linked_List<T>::print(){
@@ -173,5 +173,49 @@ Singly_Linked_List<T>::~Singly_Linked_List(){
 
 }
 
+template<class T>
+bool Singly_Linked_List<T>::is_same(const Singly_Linked_List<T> & list){
+
+    Node<T>* first,*second ;
+
+    for( first=head,  second=list.head ; first&&second ; second=second->next,first=first->next) {
+        if(first->data!=second->data)
+            return false;
+    }
+
+    return !first && !second;
+}
+
+template <class T>
+void Singly_Linked_List<T>::delete_nxt(Node<T>* prev){
 
 
+    if(!prev||prev==tail)
+        assert(false);
+
+    Node<T>* nxt= prev->next;
+    prev->next=nxt->next;
+
+    bool Tail = (nxt==tail);
+    delete_node(nxt);
+
+    if(Tail)
+        tail=prev;
+}
+
+template <class T>
+void Singly_Linked_List<T>::delete_nth(int n){
+
+    if(n<=0||n>length)
+        assert(false);
+
+    if(n==1)
+        delete_first();
+    else if(n==length)
+        delete_last();
+    else{
+        Node<T>*prev= get_nth(n-1);
+        delete_nxt(prev);
+    }
+
+}

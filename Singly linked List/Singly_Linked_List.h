@@ -39,6 +39,8 @@ private:
 
 public:
 
+    Singly_Linked_List()=default;
+
     void print();//
     void insert_back(T val);//
     void insert_front(T val);//
@@ -58,19 +60,23 @@ public:
      * parameter is the index only
      * there is no return
      **/
-    void delete_nth(int n);
+    void delete_nth(int n);//
 
     /** the idea is to delete the node after the passed one its time of O(1) and memory of O(1)
      * the parameter is the prev node to delete the next one to it
      * there is no return
      **/
-    void delete_nxt(Node<T> prev);
+    void delete_nxt(Node<T>*prev);//
 
     /** the idea is to compare between two lists weather they are equal to each other or not
      * the parameter is the second list to compare with
      * the return is the boolean weather is false or true
      * */
-    bool is_same(const Singly_Linked_List & list);
+    bool is_same(const Singly_Linked_List<T> & list);//
+
+    /** Preventing the copy constructor and the assignment operator */
+    Singly_Linked_List(const Singly_Linked_List<T> &)=delete;
+    Singly_Linked_List& operator=(const Singly_Linked_List<T> &)=delete;
 
     ~Singly_Linked_List();//
 
