@@ -13,25 +13,33 @@ class Vector {
 private:
     T *arr= nullptr;
     int size=0;
-    int capacity=10;
+    int capacity=0;
     void expand_capacity();
 public:
     Vector(int size=0 );
     ~Vector();
     int get_size();
-
     T& operator[](int x);// for getting and setting value
     T* find (T val);
     T Front();
     T Back();
     void Push_back(T x);
 
-    void Insert(T val);
-    void Right_Rotate(int times);
-    void Left_Rotate(int times);
-    void Delete(int index);
+
+    friend ostream& operator<<(ostream& output ,const Vector<T>& vec);
+
+    void Insert(T val,int idx);
+
+    void Right_Rotate(int times=1);
+    void Left_Rotate(int times=1);
+
+
+
     void Pop();
+    void Pop(int idx);
 };
+
+
 
 
 

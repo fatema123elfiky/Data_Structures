@@ -3,7 +3,7 @@
 //
 
 #include "Vector.h"
-
+#include "cassert"
 
 // ========================= Implementation========================//
 
@@ -13,12 +13,15 @@ Vector<T>::Vector(int size ){
     if(size<0)
         size=0;
     this->size=size;
+    capacity=10+size;
     arr=new int [capacity];
 }
 
 template<class T>
 Vector<T>::~Vector() {
+
     delete [] arr;
+    arr= nullptr;
 }
 
 template<class T>
@@ -29,9 +32,10 @@ int Vector<T>::get_size() {
 // trial
 // return by reference to change if are gonna change by setting or just getting having the referenced value
 template<class T>
-T &Vector<T>::operator[](int x) {
+T& Vector<T>::operator[](int x) {
     return arr[x];
 }
+
 
 template<class T>
 T Vector<T>::Front() {
@@ -77,3 +81,67 @@ void Vector<T>::expand_capacity() {
 }
 
 
+template <class T>
+ostream& operator<<(ostream& output ,const Vector<T>& vec){
+    for (int i = 0; i < vec.size; ++i)
+        output<<vec[i]<<' ';
+    return  output;
+
+}
+
+template<class T>
+void Vector<T>::Insert(T val, int idx) {
+
+    assert(idx>=0&&idx<size);
+
+    if(size==capacity)
+        expand_capacity();
+
+    size++;
+    for (int i = size-1; i >idx ; --i)
+        arr[i]=arr[i-1];
+
+    arr[idx]=val;
+}
+
+template <class T>
+void Vector<T>::Pop() {
+    size--;
+}
+
+template <class T>
+void Vector<T>::Pop(int idx) {
+    assert(idx>=0&&idx<size);
+
+    if(idx==size-1)
+        Pop();
+    else{
+        for (int i = idx; i <size-1 ; ++i)
+            arr[i]=arr[i+1];
+        size--;
+    }
+}
+
+template<class T>
+void Vector<T>::Right_Rotate(int times) {
+    times%=size;
+
+    while (times--){
+        T value=arr[size-1];
+        Pop();
+        Insert(value,0);
+    }
+
+}
+
+template<class T>
+void Vector<T>::Left_Rotate(int times) {
+
+    times%=size;
+    while (times--){
+        T first_element=arr[0];
+        for (int i = 1; i < size; ++i)
+            arr[i-1]=arr[i];
+        arr[size-1]=arr[0];
+    }
+}
