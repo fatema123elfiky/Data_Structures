@@ -1,1 +1,1 @@
-##### It contains two styles of stack but array based stack one is normal stack and the other is two-stack in one for some optimizations in industry as sometimes there is no need to make two stacks to store it but you need only one.
+
