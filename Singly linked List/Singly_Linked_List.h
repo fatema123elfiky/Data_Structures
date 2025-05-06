@@ -78,6 +78,10 @@ public:
     Singly_Linked_List(const Singly_Linked_List<T> &)=delete;
     Singly_Linked_List& operator=(const Singly_Linked_List<T> &)=delete;
 
+    T getHead();
+    T getTail();
+    int size();
+    void clear ();
     ~Singly_Linked_List();//
 
 };

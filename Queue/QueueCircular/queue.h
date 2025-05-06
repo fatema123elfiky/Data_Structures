@@ -19,12 +19,13 @@ private :
     int next(int idx);
 public:
     queue(int sz);// O(1) --> time complex.
-    void enqueue(int val);// O(1)--> time complex.
+    void enqueue(T val);// O(1)--> time complex.
     T dequeue();// O(1)--> time complex.
     bool isEmpty();// O(1)--> time complex.
     bool isFull();// O(1)--> time complex.
     void clear();// O(1)--> time complex.
-
+    T Front();
+    T Back();
 
 };
 

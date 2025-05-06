@@ -37,7 +37,7 @@ T queue<T>::dequeue() {
 }
 
 template<typename T>
-void queue<T>::enqueue(int val) {
+void queue<T>::enqueue(T val) {
     assert(!isFull());
     arr[end]=val;
     end= next(end);
@@ -49,3 +49,12 @@ int queue<T>::next(int idx) {
     return (++idx)%sz;
 }
 
+template<typename T>
+T queue<T>::Front() {
+    return arr[front];
+}
+
+template<typename T>
+T queue<T>::Back() {
+    return arr[end];
+}

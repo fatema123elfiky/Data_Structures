@@ -219,3 +219,30 @@ void Singly_Linked_List<T>::delete_nth(int n){
     }
 
 }
+
+template<typename T>
+T Singly_Linked_List<T>::getHead() {
+    return head->data;
+}
+
+template<typename T>
+T Singly_Linked_List<T>::getTail() {
+    return tail->data;
+}
+
+template<typename T>
+int Singly_Linked_List<T>::size() {
+    return length;
+}
+
+template<typename T>
+void Singly_Linked_List<T>::clear() {
+
+    while(head){
+        Node<T> * curr = head;
+        head=head->next;
+        delete_node(curr);
+
+    }
+    head=tail= nullptr,length=0;
+}
