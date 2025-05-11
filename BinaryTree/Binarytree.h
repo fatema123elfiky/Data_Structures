@@ -12,7 +12,7 @@ using namespace std;
 template<typename T>
 class Binarytree {
 private:
-   T data{};
+    T data{};
     Binarytree * left{};
     Binarytree * right{};
     T MAX (Binarytree<T> * node);
