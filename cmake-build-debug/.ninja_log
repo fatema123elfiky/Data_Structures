@@ -1,0 +1,5 @@
+# ninja log v5
+1	393	7683509360640208	build.ninja	90889a6eaa0aac9e
+3	431	7682472263861149	CMakeFiles/self_datastructure_own_implementation.dir/Dequeue/CircularDequeue/deque.cpp.obj	a3fe9945df957027
+5	597	7682475453263454	CMakeFiles/self_datastructure_own_implementation.dir/main.cpp.obj	3ebac6e42170eacc
+598	787	7682475455210864	self_datastructure_own_implementation.exe	16d154c9812845de

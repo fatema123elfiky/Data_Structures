@@ -5,6 +5,7 @@
 #ifndef SELF_DATASTRUCTURE_OWN_IMPLEMENTATION_BSTREE_H
 #define SELF_DATASTRUCTURE_OWN_IMPLEMENTATION_BSTREE_H
 
+
 template<typename T>
 class BSTree {
 private:
@@ -17,17 +18,24 @@ private:
     BSNode * root{};
     void insert_node(T target , BSNode * node);
     bool Search(T target,BSNode * node);
+    void inorder (BSNode * node);
+    int countN(BSNode * node);
+    int countL(BSNode * node);
+    int height(BSNode * node);
 public:
     void insert(T target);
     BSNode* delete_val(T target,BSNode* node);
     bool search (T target);
 
     bool isbst(BSNode * node);//
-    void print_inorder();//
-    void level_order();//
+    void print_inorder();
+    void level_order();
 
     BSNode* min_node(BSNode * node);
     void delete_value (T target);
+    int countNodes();
+    int countLeaves();
+    int Height();
 
 };
 

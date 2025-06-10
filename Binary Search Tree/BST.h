@@ -31,13 +31,15 @@ public:
     bool search(T val);//
     void insert(T val);//
     bool Isearch(T val);
-    bool isBST(T MIN=INT_MIN , T MAX=INT_MAX);
-    BST<T>* buildBST(vector<T> inorder , int start=0 , int end=-10);
-    T MIN();
-    pairs<T> successor(T target);
-    void delete_val (T target);//
-    BST<T> * delete_node(T target , BST<T>* node);
+    T MIN();//
 
+
+    bool isBST(T MIN=INT_MIN , T MAX=INT_MAX);//
+    pairs<T> successor(T target);
+
+    void delete_val (T target);//
+    BST<T> * delete_node(T target , BST<T>* node);//
+    BST<T>* buildBST(vector<T> inorder , int start=0 , int end=-10);
 };
 
 
