@@ -23,19 +23,19 @@ private:
     int countL(BSNode * node);
     int height(BSNode * node);
 public:
-    void insert(T target);
-    BSNode* delete_val(T target,BSNode* node);
-    bool search (T target);
+    void insert(T target);// log n , n
+    BSNode* delete_val(T target,BSNode* node);// log n , n
+    bool search (T target);// log n , n
 
-    bool isbst(BSNode * node);//
-    void print_inorder();
+    bool isbst(BSNode * node);
+    void print_inorder();//n
     void level_order();
 
-    BSNode* min_node(BSNode * node);
+    BSNode* min_node(BSNode* node);// log n , n
     void delete_value (T target);
-    int countNodes();
-    int countLeaves();
-    int Height();
+    int countNodes();// n
+    int countLeaves();// n
+    int Height();// n
 
 };
 
