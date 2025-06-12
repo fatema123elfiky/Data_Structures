@@ -1,5 +1,8 @@
 #include "Stack-Linked-List-Based/Stack_list.h"
-#include "string"
+#include <string>
+#include <iostream>
+
+
 
 using namespace std;
 
@@ -43,4 +46,9 @@ bool valid(string s){
         return false;
     else
         return true;
+}
+
+int main(){
+    string s ="t[5] + u / (v * (w + y)";
+    cout<< valid(s);
 }
