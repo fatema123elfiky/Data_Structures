@@ -20,7 +20,7 @@ private:
         int balance_factor();
         AVLNode(T data):data(data){}
     };
-    AVLNode root;
+    AVLNode root{};
 
     //O(1)
     AVLNode* rightRotation(AVLNode * Q);

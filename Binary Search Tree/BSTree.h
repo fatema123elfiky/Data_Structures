@@ -23,6 +23,7 @@ private:
     int countL(BSNode * node);
     int height(BSNode * node);
 public:
+
     void insert(T target);// log n , n
     BSNode* delete_val(T target,BSNode* node);// log n , n
     bool search (T target);// log n , n
