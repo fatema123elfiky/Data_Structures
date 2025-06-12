@@ -8,7 +8,7 @@
 template<typename T>
 class MinHeap {
 private:
-    int *array{};
+    T *array{};
     int size{};
     int capacity{1000};// as in the vector
 
@@ -31,20 +31,25 @@ private:
      * @return index of parent
      */
     int parent(int node);
+
     void heapify_up(int child_pos);
     void heapify_down(int parent_pos);
+    void heapify();
 public:
 
      MinHeap();
     ~MinHeap();
     void push (T key);
     bool isEmpty();
+    MinHeap(const T * arr , int sz);
 
 
-    /**min val*/
+    /** min value*/
     T top();
+
     /** remove smallest value*/
     void pop();
+    void HeapSort(T * arr , int sz);
 };
 
 

@@ -79,3 +79,47 @@ void MinHeap<T>::heapify_down(int parent_pos) {
         heapify_down(child);
     }
 }
+
+template<typename T>
+bool MinHeap<T>::isEmpty() {
+    return size==0;
+}
+
+template<typename T>
+MinHeap<T>::MinHeap(const T *arr, int sz) {
+    assert(sz<=capacity);
+    array=new T [capacity]{};
+    size=sz;
+    for (int index = 0; index < sz; ++index)
+        array[index]=arr[index];
+    heapify();
+}
+
+template<typename T>
+void MinHeap<T>::heapify() {
+    for (int index = size/2 - 1; index >=0 ; ++index)
+        heapify_down(index);
+
+}
+
+template<typename T>
+void MinHeap<T>::HeapSort(T* arr , int sz) {
+
+    T* oldarr =array;
+    int oldsize=size;
+
+    array=arr;
+    size=sz;
+
+    heapify();
+    while (size--){
+        swap(array[0],array[size]);
+        heapify_down(0);
+    }
+    for (int i = 0; i < sz/2; ++i)
+        swap(array[i],array[sz-i-1]);
+    array=oldarr;
+    size=oldsize;
+
+
+}
