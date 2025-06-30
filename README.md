@@ -28,7 +28,13 @@ This repository contains my own implementations of classic and advanced data str
 🏢 University: **Cairo University – Computer Science and AI**<br>
 👩‍💻 Role: **Student**, **Competitive Programmer** and **Software Engineer**<br>
 
- 
+ ## 📂 Structures Implemented
+ | Category              | ✅ Structures Included                                                                             |
+| --------------------- | ------------------------------------------------------------------------------------------------- |
+| **Linear Structures** | ✔️ Singly Linked List<br>✔️ Doubly Linked List<br>✔️ Queue<br>✔️ Dequeue<br>✔️ Stack<br>✔️ Vector |
+| **Trees & Heaps**     | ✔️ Binary Tree<br>✔️ Binary Search Tree<br>✔️ AVL Tree<br>✔️ Binary Heap<br>✔️ Priority Queue     |
+| **Coming Soon 🚧**    | Stay Tuned ⚡⏳     |
+
 
 ## 📦 Usage
 
