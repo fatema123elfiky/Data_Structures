@@ -1,3 +1,39 @@
-# Data_Structures
-##### My own implementations for containers as Vector , Single linked lists , Double linked lists , Stack , Queue ,Trees ,etc <br> Each Container contains small document to explain the file how that container go <br> Have fun and enjoy :)
-##### small reminder doubly linked list and binary tree need more work
+
+# 📚 Data Structures Repository
+
+**A structured collection of foundational **data structures** implemented in C++ This repository is built to support learning, revision, and practical coding for students, competitive programmers, and interview prep.**
+
+
+
+## 🧠 Overview
+
+This repository contains my own implementations of classic and advanced data structures, each with clean code, clear logic, and (where applicable) example usage. It’s designed to help students, developers, and enthusiasts deepen their understanding of data structures through hands-on practice.It is well-documented and you can study from it as an educational resource . Have fun and enjoy :)
+
+
+
+## ✅ Features
+📌 **Well-structured directory per data structure**
+
+📄 **Commented code for easy understanding**
+
+📈 **Efficient implementations optimized for performance**
+
+🧪 **Ready for competitive programming practice**
+
+
+## 👤 Author
+**Fatema El-Fiky**<br>
+🏅 Passionate about algorithms, problem solving, and building efficient solutions<br>
+🌐 GitHub: **@fatema123elfiky**<br>
+🏢 University: **Cairo University – Computer Science and AI**<br>
+👩‍💻 Role: **Student**, **Competitive Programmer** and **Software Engineer**<br>
+
+ 
+
+## 📦 Usage
+
+Clone the repo:
+
+```bash
+git clone https://github.com/fatema123elfiky/Data_Structures.git
+cd Data_Structures
