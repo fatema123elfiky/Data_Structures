@@ -3,8 +3,9 @@
 //
 
 #include <iostream>
-#include <vector>
+
 #include "priorityMaxheap.h"
+#include "Priority.h"
 using namespace std;
 
 int main(){
@@ -26,4 +27,26 @@ int main(){
     pq.insert(3,3145);
     while(!pq.isEmpty())
         cout<<pq.pop()<<' ';
+
+cout<<"////////////////////////////\n";
+    /// Priority part
+    Priority<int> p = Priority<int>();
+    p.insert(1,1131);
+    p.insert(3,31111);
+    p.insert(2,2211);
+    p.insert(3,3161);
+    p.insert(7,7761);
+
+    cout<<p.pop()<<'\n';
+    cout<<p.pop()<<'\n';
+
+    p.insert(1,1535);
+    p.insert(2,2815);
+    p.insert(3,3845);
+    p.insert(3,3145);
+    while(!p.isEmpty())
+        cout<<p.pop()<<' ';
+
+
+
 }
