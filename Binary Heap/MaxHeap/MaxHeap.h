@@ -35,14 +35,19 @@ private:
 public:
 
     bool isEmpty();//
-    void pop();//
+    T pop();//
     void push(T key);//
     T top();//
     ~MaxHeap();//
     MaxHeap();//
     MaxHeap(const T * arr , int sz);
     void HeapSort(T * arr , int sz);
+
+    //NEW ADDED
+    T Min ();
+    T ExtractMin ();
+
 };
 
-
+#include "MaxHeap.tpp"
 #endif //SELF_DATASTRUCTURE_OWN_IMPLEMENTATION_MAXHEAP_H

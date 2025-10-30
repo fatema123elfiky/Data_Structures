@@ -97,7 +97,7 @@ MinHeap<T>::MinHeap(const T *arr, int sz) {
 
 template<typename T>
 void MinHeap<T>::heapify() {
-    for (int index = size/2 - 1; index >=0 ; ++index)
+    for (int index = size/2 - 1; index >=0 ; --index)
         heapify_down(index);
 
 }

@@ -66,10 +66,12 @@ void MaxHeap<T>::heapify_up(int child) {
 }
 
 template<typename T>
-void MaxHeap<T>::pop() {
+T MaxHeap<T>::pop() {
     assert(!isEmpty());
+    T ret = array[0];
     array[0]=array[--size];
     heapify_down(0);
+    return ret;
 }
 
 template<typename T>
@@ -80,7 +82,7 @@ void MaxHeap<T>::heapify_down(int node) {
         return;
     if(right_child!=-1&&array[right_child]>array[child])
         child=right_child;
-    if(array[node]>array[child]) {
+    if(array[node]< array[child]) {
         swap(array[node], array[child]);
         heapify_down(child);
     }
@@ -97,7 +99,7 @@ MaxHeap<T>::MaxHeap(const T *arr, int sz) {
 
 template<typename T>
 void MaxHeap<T>::heapify() {
-    for (int index = size/2 - 1; index >=0 ; ++index)
+    for (int index = size/2 - 1; index >=0 ; --index)
         heapify_down(index);
 
 }
@@ -116,10 +118,37 @@ void MaxHeap<T>::HeapSort(T* arr , int sz) {
         swap(array[0],array[size]);
         heapify_down(0);
     }
-    for (int i = 0; i < sz/2; ++i)
-        swap(array[i],array[sz-i-1]);
+
     array=oldarr;
     size=oldsize;
 
 
+}
+
+
+template<typename T>
+T MaxHeap<T>::Min() {
+    T mini = array[size-1];
+    for (int idx = size -1; idx >= size/2 ; --idx)
+        mini = min (mini,array[idx]);
+    return mini;
+}
+
+template<typename T>
+T MaxHeap<T>::ExtractMin() {
+    T mini = array[size-1];
+    int index = size -1;
+
+    for (int idx = size -1; idx >= size/2 ; --idx) {
+        T value =array[idx];
+        if (mini >value)
+            mini = array[idx], index = idx;
+    }
+
+    for (int idx = index; idx < size-1 ; ++idx)
+        swap(array[idx],array[idx+1]);
+    size--;
+    heapify();
+
+    return mini;
 }
