@@ -99,7 +99,7 @@ void AVL<T>::Delete(T target) {
 }
 
 template<typename T>
-typename AVL<T>::AVLNode *AVL<T>::Del(T target, AVL::AVLNode *node) {
+typename AVL<T>::AVLNode *AVL<T>::Del(T target, typename AVL<T>::AVLNode *node) {
     if(!node)
         return nullptr;
     if(target<node->data)
@@ -117,14 +117,18 @@ typename AVL<T>::AVLNode *AVL<T>::Del(T target, AVL::AVLNode *node) {
         else{
             AVLNode * mn= Min(node->right) ;
             node->data=mn->data;
-            node->right= Del(mn,node->right);
+            node->right= Del(mn->data,node->right);
             temp = nullptr;
         }
         if(temp)
             delete temp;
     }
-    node->update_height();
-    return balance(node);
+    if(node){
+        node->update_height();
+        node =balance(node);
+    }
+    return node;
+
 
 }
 
